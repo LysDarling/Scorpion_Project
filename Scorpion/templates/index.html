@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--TITULO-->
+    <title>Scorpion - Home</title>
+    <!--END TITULO-->
+
+    <!--ICONO PESTAÑA PÁGINA-->
+    <link rel="icon" type="image/png" href="{% static 'img/lobster.png' %}" />
+    <!--END ICONO-->
+
+    <!--VINCULO ARCHIVO CSS / RAIZ APLICACION SCORPION STATIC/CSS/STYLE.CSS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!--END VINCULO-->
+
+    <!--VINCULO FUENTES GOOGLE-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!--END-->
+
+    <!--CDN BOOTSTRAP-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!--END CDN-->
+
+    <!--CDN FONTAWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!--END CDN-->
+  </head>
+
+  <!--BEGIN BODY-->
+  <!--USO DE SISTEMA GRID BOOTSTRAP-->
+  <!--USO DE ICONOS FONTAWESOME-->
+  <body class="btn-dark">
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-12 col-md-4 order-md-3 d-flex justify-content-end align-items-center"
+        >
+          <i
+            class="fab fa-facebook"
+            style="font-size: 45px; padding-right: 20px; color: #c9bdf2"
+          ></i>
+          <i
+            class="fab fa-whatsapp"
+            style="font-size: 45px; padding-right: 10px; color: #c9bdf2"
+          ></i>
+        </div>
+        <div class="col-12 col-md-4 order-md-2 text-center">
+          <img
+            src="{% static 'img/logo.png' %}"
+            class="img-fluid"
+            alt="Imagen Responsiva"
+          />
+        </div>
+        <div
+          class="col-12 col-md-4 order-md-1 d-flex justify-content-start align-items-center"
+        >
+          <i
+            class="fas fa-user"
+            style="font-size: 45px; padding-right: 10px; color: #c9bdf2"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="{% static 'img/cartoon.png' %}" alt="..." />
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center mt-0">
+        <div class="col-12 text-center">
+          <p class="text">Un Nuevo concepto de Peluquería</p>
+        </div>
+        <div class="col-12 text-center">
+          <button class="btn-hover color-7 custom-btn">
+            <a
+              href="{% url 'citas' %}"
+              style="text-decoration: none; color: aliceblue"
+              >Citas Agendadas</a
+            >
+          </button>
+          <button class="btn-hover color-7 custom-btn">
+            <a
+              href="{% url 'servicios' %}"
+              style="text-decoration: none; color: aliceblue"
+              >Tipos de Servicios</a
+            >
+          </button>
+        </div>
+        <div class="col-12 text-center">
+          <p class="text1">
+            © 2023 ®Rulitos inc. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--LIBRERIAS JQUERY Y JS BOOTSTRAP-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <!--END BODY-->
+  </body>
+</html>

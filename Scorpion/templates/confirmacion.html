@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Confirmación de Cita</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="icon" type="image/png" href="{% static 'img/lobster.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/map.css' %}">
+    <script src="{% static 'js/app.js' %}"></script>
+  </head>
+  <body class="bg-dark">
+    <div class="container mt-5">
+      <br /><br /><br />
+      <div class="card" style="background-color: #5c6bc0">
+        <div class="card-body">
+          <h5 class="card-title">Cita Agendada</h5>
+          <p class="card-text">Has agendado una cita para:</p>
+          <ul>
+            <li><strong>Cliente:</strong> {{ cliente }}</li>
+            <li><strong>Hora:</strong> {{ hora }}</li>
+            <li><strong>Fecha:</strong> {{ fecha }}</li>
+            <li>
+              <strong>Servicios:</strong>
+              <ul>
+                {% for servicio in servicios %}
+                <li>{{ servicio }}</li>
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+          <a href="{% url 'index' %}" class="btn btn-primary">Volver al Home</a>
+          <div class="container">
+            <section class="mx-auto my-5" style="max-width: 23rem;">
+              <div class="card map-card">
+                <div id="map-container-google-1" class="z-depth-1-half map-container">
+                  <!--URL GOOGLE MAPS-->
+                  <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="card-body closed px-0">
+                  <!-- Contenido adicional del mapa -->
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

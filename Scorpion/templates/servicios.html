@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!--TITULO-->
+  <title>Servicios - Scorpion</title>
+  <!--END TITULO-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="{% static 'css/services.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'img/lobster.png' %}">
+
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-12 col-md-4 order-md-2 text-center">
+      <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" class="img-fluid" alt="Imagen Responsiva"></a>
+    </div>
+  </div>
+
+  <!-- partial:index.partial.html -->
+  <main class="page-content">
+    <div class="card">
+      <div class="content">
+        <h2 class="title" style="color: aliceblue;">Lifting de pestañas</h2>
+
+        <button class="btn"><a href="{% url 'crear_cliente' %}" style="text-decoration: none; color: aliceblue;">Agendar
+            Cita</a></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title" style="color: aliceblue;">Barbería</h2>
+
+        <button class="btn"><a href="{% url 'crear_cliente' %}" style="text-decoration: none; color: aliceblue;">Agendar
+            Cita</a></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title" style="color: aliceblue;">Coloracion</h2>
+
+        <button class="btn"><a href="{% url 'crear_cliente' %}" style="text-decoration: none; color: aliceblue;">Agendar
+            Cita</a></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title" style="color: aliceblue;">Corte de Pelo</h2>
+
+        <button class="btn"><a href="{% url 'crear_cliente' %}" style="text-decoration: none; color: aliceblue;">Agendar
+            Cita</a></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title" style="color: aliceblue;">Depilacion</h2>
+
+        <button class="btn"><a href="{% url 'crear_cliente' %}" style="text-decoration: none; color: aliceblue;">Agendar
+            Cita</a></button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title" style="color: aliceblue;">Parafinoterapia</h2>
+
+        <button class="btn"><a href="{% url 'crear_cliente' %}" style="text-decoration: none; color: aliceblue;">Agendar
+            Cita</a></button>
+      </div>
+    </div>
+  </main>
+  <!-- partial -->
+
+</body>
+
+</html>
+
+</body>
+
+</html>

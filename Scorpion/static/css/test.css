@@ -1,0 +1,75 @@
+body {
+    background-color: #343a40
+    }
+    .box {
+    margin: auto
+    }
+    .card {
+    padding: 8%;
+    padding-top: 35px;
+    margin-top: 60px;
+    margin-bottom: 80px
+    }
+    #id_message,
+    textarea.input-box {
+        resize: none;
+        background-color: #616161;
+        border: #616161;
+        color: #BDBDBD;
+    }
+    
+    #id_message:focus,
+    textarea.input-box:focus {
+        background-color: #000000;
+        color: #BDBDBD;
+    }
+    
+    #id_email {
+        height: 45px;
+    }
+    
+    #id_message {
+        height: 120px;
+    }
+    
+    input.input-box,
+    textarea.input-box {
+        background-color: #fafafa;
+        border: #616161;
+        color: #000000;
+    }
+    
+    input.input-box:focus,
+    textarea.input-box:focus {
+        background-color: #fafafa;
+        color: #000000;
+    }
+    
+    .rm-border:focus {
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    form .form-control::-webkit-input-placeholder {
+        color: #9E9E9E;
+    }
+    
+    ::-moz-placeholder {
+        color: #9E9E9E !important;
+    }
+    
+    input.btn-purple {
+        background-color: #5C6BC0;
+        color: #ffffff;
+    }
+    
+    .custom-card {
+        background-color: #5C6BC0;
+        /* otros estilos personalizados */
+      }
+
+
+
+
+

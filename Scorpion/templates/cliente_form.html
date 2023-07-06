@@ -1,0 +1,111 @@
+{% load static %} {% load custom_filters %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crear Cliente</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/test.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'img/lobster.png' %}" />
+  </head>
+  <body class="btn-dark">
+    <br />
+    <div class="container">
+      <div class="row justify justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 col-xl-5">
+          <form method="post">
+            {% csrf_token %} {% if form.rut.errors %}
+            <ul>
+              {% for error in form.rut.errors %}
+              <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            <div class="card custom-card">
+              <div class="row mt-0">
+                <div class="col-md-12">
+                  <h4 class="">Creación de Cliente</h4>
+                </div>
+              </div>
+              <div class="form-group row mb-3">
+                <div class="col-md-12 mb-0">
+                  <br />
+                  <p class="mb-1">Rut</p>
+                  {{ form.rut|add_class:"form-control input-box rm-border" }}
+                  <br />
+                  <p class="mb-1">Nombre</p>
+                  {{ form.nombre|add_class:"form-control input-box rm-border" }}
+                  <br />
+                  <p class="mb-1">Apellido</p>
+                  {{ form.apellido|add_class:"form-control input-box rm-border"}}
+                  <br />
+                  <p class="mb-1">Teléfono</p>
+                  {{ form.telefono|add_class:"form-control input-box rm-border"}}
+                  <br />
+                  <p class="mb-1">Email</p>
+                  {{ form.email|add_class:"form-control input-box rm-border" }}
+                </div>
+              </div>
+
+              {% if cliente_existente %}
+              <div class="form-group row mb-0">
+                <div class="col-md-12">
+                  <p>El cliente ya existe. ¿Desea continuar?</p>
+                  <a
+                    href="{% url 'crear_cita' %}"
+                    class="btn btn-info bg-primary"
+                    >Continuar</a
+                  >
+                </div>
+              </div>
+              {% endif %}
+              <div class="form-group row">
+                <div class="col-md-12 mb-2"></div>
+              </div>
+              <div class="form-group row justify-content-center mb-0">
+                <div class="col-md-12 px-3">
+                  <input
+                    type="submit"
+                    value="Guardar"
+                    class="btn btn-block btn-light rm-border"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* FUNCION RUT FORMATO XX.XXX.XXX-X OR X.XXX.XXX-X */
+      function formatRut(input) {
+        var rut = input.value.replace(/\./g, "").replace(/-/g, "");
+        if (rut.length > 1) {
+          rut =
+            rut.substring(0, rut.length - 1) + "-" + rut.charAt(rut.length - 1);
+        }
+        if (rut.length > 3 && rut.length <= 6) {
+          rut =
+            rut.substring(0, rut.length - 3) +
+            "." +
+            rut.substring(rut.length - 3);
+        }
+        if (rut.length > 6) {
+          rut =
+            rut.substring(0, rut.length - 8) +
+            "." +
+            rut.substring(rut.length - 8, rut.length - 5) +
+            "." +
+            rut.substring(rut.length - 5, rut.length - 2) +
+            "-" +
+            rut.charAt(rut.length - 1);
+        }
+        input.value = rut;
+      }
+    </script>
+  </body>
+</html>

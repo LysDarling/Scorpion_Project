@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Citas Agendadas</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="icon" type="image/png" href="{% static 'img/lobster.png' %}" />
+  </head>
+  <body class="bg-dark">
+    <div class="container mt-5">
+      <h1 class="text-center text-light mb-4">Citas Agendadas</h1>
+      <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for cita in citas %}
+          <tr>
+            <td>{{ cita.id }}</td>
+            <td>{{ cita.cliente.nombre }} {{ cita.cliente.apellido }}</td>
+            <td>
+              <ul>
+                {% for servicio in cita.servicio.all %}
+                <li>{{ servicio.nombre }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+            <td>{{ cita.fecha }}</td>
+            <td>{{ cita.hora }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{% url 'index' %}" class="btn btn-primary">Volver</a>
+    </div>
+  </body>
+
+</html>

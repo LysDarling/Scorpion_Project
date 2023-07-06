@@ -1,0 +1,84 @@
+{% load static %} {% load custom_filters %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crear Cita</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#id_servicio").select2();
+      });
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/test.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'img/lobster.png' %}" />
+  </head>
+
+  <body class="btn-dark">
+    <br />
+    <br />
+    <br />
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 col-xl-5">
+          <form method="post">
+            {% csrf_token %}
+            <div class="card custom-card">
+              <div class="row mt-0">
+                <div class="col-md-12">
+                  <h4 class="">Crear Cita</h4>
+                </div>
+              </div>
+              <div class="form-group row mb-3">
+                <div class="col-md-12 mb-0">
+                  <br />
+                  <p class="mb-1">Cliente:</p>
+                  {{ form.cliente|add_class:"form-control input-box rm-border"}} {% for error in form.cliente.errors %}
+                  <p class="text-danger">{{ error }}</p>
+                  {% endfor %}
+                  <br />
+                  <p class="mb-1">Servicio:</p>
+                  {{ form.servicio|add_class:"form-control input-box rm-border"}} {% for error in form.servicio.errors %}
+                  <p class="text-danger">{{ error }}</p>
+                  {% endfor %}
+                  <br />
+                  <br />
+                  <p class="mb-1">Fecha:</p>
+                  {{ form.fecha|add_class:"form-control input-box rm-border" }}
+                  {% for error in form.fecha.errors %}
+                  <p class="text-danger">{{ error }}</p>
+                  {% endfor %}
+                  <br />
+                  <p class="mb-1">Hora:</p>
+                  {{ form.hora|add_class:"form-control input-box rm-border" }}
+                  {% for error in form.hora.errors %}
+                  <p class="text-danger"><strong>{{ error }}</strong></p>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-center mb-0">
+                <div class="col-md-12 px-3">
+                  <input
+                    type="submit"
+                    value="Guardar"
+                    class="btn btn-block btn-light rm-border"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
